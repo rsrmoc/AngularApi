@@ -1,0 +1,23 @@
+<h1>Usuarios</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Usuario</td>
+            <td>Nome</td>
+            <td>Avatar</td>
+            <td>...</td>
+        </tr> 
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of usuarios">
+            <td>{{user.cd_usuario}}</td>
+            <td>{{user.nm_usuario}}</td>
+            <td>{{user.nome}}</td>
+            <td>{{user.avatar}}</td> 
+            <td><a routerLink="/users/update/{{user.cd_usuario}}">EDITAR</a> </td>
+        </tr>
+
+    </tbody>
+</table>

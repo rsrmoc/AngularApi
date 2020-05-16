@@ -1,0 +1,27 @@
+<h2>Criar Usuarios</h2>
+
+<div>
+    <label>Usuario:
+        <input placeholder="Usuario" [(ngModel)]="request.nm_usuario" >
+    </label>
+    <br><br>
+    <label>Nome:
+        <input placeholder="Nome Do Usuario" [(ngModel)]="request.nome">
+    </label>
+    <br><br>
+    <label>Avatar:
+        <input placeholder="Avatar Do Usuario" [(ngModel)]="request.avatar">
+    </label>
+    <br><br>
+    <button (click)="save()">Gravar</button>
+</div>
+
+<br><br>
+
+<div *ngIf="response">
+    <h3>Criado com Sucesso!</h3>
+<label>Usuario: {{response.nm_usuario}}</label><br>
+<label>Nome: {{response.nome}}</label><br>
+<label>Avatar: {{response.avatar}}</label><br>
+<label>Id: {{response.cd_usuario}}</label><br>
+</div>
