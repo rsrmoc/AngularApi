@@ -1,8 +1,8 @@
 import { ResponseCreate, RequestCreate, RequestUpdate, RequestUser } from './user.model';
- 
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs'; 
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class UserService {
 
   private url = 'http://rpsys.com.br/Rotinas/Api/user';
 
-  private url2 = 'http://rpsys.com.br/Rotinas/Api/CriarUser'; 
+  private url2 = 'http://rpsys.com.br/Rotinas/Api/CriarUser';
 
   constructor( private http: HttpClient) { }
 
@@ -25,15 +25,17 @@ export class UserService {
 
   getUser(id : string): Observable<RequestUser> {
 
-    const _url = `${this.url}/${id}`; 
+    const _url = `${this.url}/${id}`;
     return this.http.get<RequestUser>(_url);
 
-  } 
+  }
 
-  updateUser(id: string,request: any){
+  updateUser(id: string, request: any){
 
     const _url_up = `${this.url2}/${id}`;
-    return this.http.put<ResponseCreate>(_url_up,request);
+    console.log(request);
+
+    return this.http.put<ResponseCreate>(_url_up, JSON.stringify(request));
 
   }
 }

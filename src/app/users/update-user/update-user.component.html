@@ -1,6 +1,6 @@
 <h2>Atualizar Usuario</h2>
-
-<!-- <div *ngIf="request"> -->
+<pre>{{ request | json}}</pre>
+<div *ngIf="request">
     <label>Usuario:
         <input placeholder="Usuario" [(ngModel)]="request.nm_usuario" >
     </label>
@@ -14,4 +14,4 @@
     </label>
     <br><br>
     <button (click)="update()">Gravar</button>
-<!-- </div> -->
+</div>
